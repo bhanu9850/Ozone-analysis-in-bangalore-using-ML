@@ -22,7 +22,7 @@ Database: Sqlite3
 Visualization: Matplotlib
 
 # Setup Instructions
-1) Clone the Repository
+1) Clone the Repository --> https://github.com/bhanu9850/Ozone-analysis-in-bangalore-using-ML.git
 2) Install Dependencies --> pip install -r requirements.txt
 3) Run Migrations & Start Server
 python manage.py migrate
