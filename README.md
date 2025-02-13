@@ -15,11 +15,11 @@ User Registration Required: Users must sign up and be activated by an admin befo
 
 
 # Tech Stack
-Frontend: HTML, CSS
-Backend: Django,Python 
-Machine Learning: Pandas, NumPy, Scikit-Learn
-Database: Sqlite3 
-Visualization: Matplotlib
+1) Frontend: HTML, CSS
+2) Backend: Django,Python 
+3) Machine Learning: Pandas, NumPy, Scikit-Learn
+4) Database: Sqlite3 
+5) Visualization: Matplotlib
 
 # Setup Instructions
 1) Clone the Repository --> https://github.com/bhanu9850/Ozone-analysis-in-bangalore-using-ML.git
@@ -28,8 +28,8 @@ Visualization: Matplotlib
 4) Access the Web App ---> Open http://127.0.0.1:8000/ in your browser.
 
 # Model Performance
-Algorithm Used: Linear Regression
-Accuracy: Evaluated RMSE,MSE and R2 score 
-Dataset: kaggle 
+1) Algorithm Used: Linear Regression
+2) Accuracy: Evaluated RMSE,MSE and R2 score 
+3) Dataset: kaggle 
 
 
