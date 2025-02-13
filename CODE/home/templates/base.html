@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ozone Analysis Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}"> 
+</head>
+<body>
+    <header>
+        <h1>Ground level Ozone Analysis In Banglore</h1>
+        <nav>
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="{% url 'admin-login' %}" class="active">Admin</a></li>
+                <li><a href="{% url 'register-user' %}" class="active">User Register</a></li>
+            
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'dataset' %}" class="active">Dataset</a></li>
+                    <li><a href="{% url 'train_model' %}" class="active">Training</a></li>
+                    <li><a href="{% url 'prediction' %}" class="active">Prediction</a></li>
+                    <li><a href="{% url 'user-logout' %}" class="active">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login-user' %}" class="active">User Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    {% block body %}
+    {% endblock %}
+
+    <footer>
+        <p>© 2025 Ozone Analysis Dashboard</p>
+    </footer>
+</body>
+</html>

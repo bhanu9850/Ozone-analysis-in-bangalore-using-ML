@@ -1,0 +1,16 @@
+.intro-text1{
+    color: rgb(246, 249, 250);
+    text-align: center;
+    
+}
+.intro-text1 h1{
+    font-size: 40px;
+}
+.intro-text2 {
+    color: rgb(246, 249, 250);
+    text-align: center;
+}
+
+.intro-text2 li{
+    list-style-type: none;
+}

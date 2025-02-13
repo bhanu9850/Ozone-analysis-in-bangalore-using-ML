@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% load static %}
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            text-align: center;
+            color:rgb(24, 23, 23);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }   
+        .ozone-plot{
+            text-align: center;
+        }     
+        .ozone-plot h2{
+            color:white;
+        }
+    </style>
+
+    <div class="container">
+        <h2 class="text-center">Model Training Results</h2>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>R² Score</td>
+                    <td>{{ r2_score }}</td>
+                </tr>
+                <tr>
+                    <td>Mean Absolute Error (MAE)</td>
+                    <td>{{ mean_absolute_error }}</td>
+                </tr>
+                <tr>
+                    <td>Mean Squared Error (MSE)</td>
+                    <td>{{ mean_squared_error }}</td>
+                </tr>
+                <tr>
+                    <td>Root Mean Squared Error (RMSE)</td>
+                    <td>{{ root_mean_squared_error }}</td>
+                </tr>
+                <tr>
+                    <td>Normalized RMSE</td>
+                    <td>{{ normalized_rmse }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ozone-plot">
+        <h2>True vs Predicted Ozone Concentration</h2>
+            <img src="data:image/png;base64,{{ plot_image }}" alt="Ozone Analysis Plot">
+        </div>
+{% endblock %}        

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% load static %}
+    <style>
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            color:rgb(23, 22, 22);
+            margin-bottom: 20px;
+        }
+        
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .custom-table th, .custom-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .custom-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .custom-table tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    </style>
+    <div class="container">
+        <h2>Dataset Overview</h2>
+        <table class="custom-table">
+            {{ dataset_table|safe }}
+        </table>
+    </div>
+{% endblock %}
