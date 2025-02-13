@@ -24,11 +24,8 @@ Visualization: Matplotlib
 # Setup Instructions
 1) Clone the Repository --> https://github.com/bhanu9850/Ozone-analysis-in-bangalore-using-ML.git
 2) Install Dependencies --> pip install -r requirements.txt
-3) Run Migrations & Start Server
-    python manage.py migrate
-    python manage.py runserver
-4)Access the Web App
-  Open http://127.0.0.1:8000/ in your browser.
+3) Run Migrations & Start Server --->python manage.py migrate --->python manage.py runserver
+4) Access the Web App ---> Open http://127.0.0.1:8000/ in your browser.
 
 # Model Performance
 Algorithm Used: Linear Regression
