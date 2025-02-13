@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<link rel = "stylesheet" href = "{% static 'css/home.css' %}">
+<main>
+    <section>
+    <div class = "intro-text1">
+        {% if user.is_authenticated %}
+        <h1>Welcome, {{ user.username }}!</h1>
+        <p>Click the button below to start ozone analysis.</p>
+        <a href="{% url 'prediction' %}">
+            <button id="predict-button">Predict Ozone Level</button>
+        </a>
+        <br><br>
+    </div>
+    
+        {% else %}
+        <h2>Welcome to the Ozone Analysis Platform!</h2>
+        <p>Please log in or register to access all features.</p>
+        {% endif %}
+<div class = "intro-text2">
+        <h3>About the Platform</h3>
+        <p>
+            This platform provides tools to analyze air quality and predict ozone levels based on the provided input data. 
+            Use the "Predict Ozone Level" feature to upload data and generate insights. Stay informed and contribute 
+            to a healthier environment!
+        </p>
+    
+        <h3>How It Works</h3>
+        <ul>
+            <li>Upload air quality data including pollutants like PM2.5, PM10, and more.</li>
+            <li>Analyze and predict ozone levels using our advanced algorithms.</li>
+            <li>Access detailed results and take actionable steps to improve air quality.</li>
+        </ul>
+    
+        <h3>Contact Us</h3>
+        <p>
+            Have questions or feedback? Reach out to our support team at 
+            <a href="mailto:support@ozoneanalysis.com">support@ozoneanalysis.com</a>.
+        </p>
+    </div>
+    </section>
+</main>
+{% endblock %}

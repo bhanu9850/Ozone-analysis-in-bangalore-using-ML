@@ -1,0 +1,100 @@
+{% extends 'admin_home.html' %}
+
+{% block content %}
+    {% load static %}
+    <style>
+        .submit{
+                background-color: aqua;
+                border-radius: 15px;
+                padding: 10px;
+                border: none;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <h2>Users List</h2>
+
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Date Joined</th>
+                <th>Is Active</th>
+                <th>Is Superuser</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.date_joined }}</td>
+                    <td>
+                        {% if user.is_active %}
+                            <span style="color:green;">Yes</span>
+                        {% else %}
+                            <span style="color:red;">No</span>
+                            <form action="" method="POST" style="display:inline;">
+                                {% csrf_token %}
+                                <input type="hidden" name="user_id" value="{{ user.id }}">
+                                <button class = "submit" type="submit" class="btn btn-primary">Activate</button>
+                            </form>
+                        {% endif %}
+                    </td>
+                    <td>
+                    {% if user.is_superuser %}
+                            <span style="color:green;">Yes</span>
+                        {% else %}
+                            <span style="color:red;">No</span>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="9">No users found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <style>
+      .user-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        background-color: white;
+        color: black;
+      }
+        .user-table th, .user-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+        }
+         .user-table th {
+         background-color: #f2f2f2;
+         }
+         .user-table tr:nth-child(even) {
+           background-color: #f9f9f9;
+        }
+       .user-table tr:hover {
+        background-color: #e0e0e0;
+      }
+      h2{
+        text-align: center
+      }
+  </style>
+{% endblock %}
