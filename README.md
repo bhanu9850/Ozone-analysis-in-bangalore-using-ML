@@ -28,8 +28,13 @@ User Registration Required: Users must sign up and be activated by an admin befo
 4) Access the Web App ---> Open http://127.0.0.1:8000/ in your browser.
 
 # Model Performance
-1) Algorithm Used: Linear Regression
+1) Algorithm Used: LSTM
 2) Accuracy: Evaluated RMSE,MSE and R2 score 
-3) Dataset: kaggle 
+3) Dataset: kaggle
+
+# Author
+- KURUVA BHANU PRAKASH
+- kuruvabhnau28prakash@gmail.com
+- 9014663588
 
 
